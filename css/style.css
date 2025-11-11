@@ -1,0 +1,225 @@
+/* style.css - Styling Dasar untuk Karate Match Tracker */
+:root {
+    --primary-color: #007bff; /* Biru */
+    --secondary-color: #6c757d; /* Abu-abu */
+    --success-color: #28a745; /* Hijau */
+    --danger-color: #dc3545; /* Merah */
+    --warning-color: #ffc107; /* Kuning */
+    --bg-color: #f8f9fa;
+    --text-color: #343a40;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+}
+
+/* --- Sidebar Styling --- */
+.sidebar {
+    width: 250px;
+    background-color: #212529; /* Darker background */
+    color: white;
+    padding: 20px 0;
+    height: 100vh;
+    position: fixed;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0 15px;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+/* --- Content Styling --- */
+.content {
+    margin-left: 250px; 
+    padding: 30px;
+    width: calc(100% - 250px);
+}
+
+.content h1 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.content hr {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    border: 0;
+    border-top: 1px solid #dee2e6;
+}
+
+/* --- Card Styling --- */
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+/* --- Form Styling --- */
+.card form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.card form input[type="text"], 
+.card form input[type="number"], 
+.card form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.card form input:focus, .card form select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.card form button {
+    background-color: var(--success-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.card form button:hover {
+    background-color: #1e7e34;
+}
+
+/* --- Table Styling --- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #e9ecef;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: var(--text-color);
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.data-table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* --- Status & Pesan --- */
+.status-aktif { color: var(--primary-color); font-weight: bold; }
+.status-gugur { color: var(--danger-color); font-weight: bold; }
+.status-juara { color: var(--success-color); font-weight: bold; }
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* --- Statistik Grid --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+    border-left: 5px solid var(--primary-color);
+}
+
+.stat-box h3 {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.stat-box p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Kontrol ukuran dan posisi container grafik */
+.chart-container {
+    width: 60%; /* Grafik akan mengambil 60% dari lebar card */
+    max-width: 500px; /* Batas maksimal ukuran agar tidak terlalu besar di layar lebar */
+    height: 400px; /* Atur ketinggian agar lebih proporsional */
+    margin: 20px auto; /* Membuat grafik berada di tengah */
+}
